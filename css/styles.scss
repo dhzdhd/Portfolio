@@ -1,0 +1,36 @@
+@use "header";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.first-section {
+    height: 100vh;
+
+    .top {
+        background: linear-gradient(to right, rgb(99, 189, 252), rgb(132, 145, 255));
+        height: 70%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .user-img {
+            width: 200pt;
+            align-self: center;
+            border: solid;
+            border-color: aquamarine;
+            border-radius: 100pt;
+        }
+    }
+
+    .bottom {
+        width: 100%;
+        
+    }
+}
+
+.user-img {
+    align-items: center;
+}
