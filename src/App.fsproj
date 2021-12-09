@@ -4,9 +4,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.fs" />
+    <Compile Include="App.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Browser.Dom" Version="2.2.0" />
     <PackageReference Include="Fable.Core" Version="3.2.3" />
+    <PackageReference Include="FsHttp" Version="6.0.1" />
+    <PackageReference Include="Octokit" Version="0.50.0" />
   </ItemGroup>
 </Project>

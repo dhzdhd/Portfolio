@@ -7,6 +7,21 @@
   font-weight: 500;
 }
 
+nav {
+  background-color: transparent;
+  height: 50pt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+nav button {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .first-section {
   height: 100vh;
 }
@@ -14,7 +29,7 @@
 .first-section .top {
   background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
   background: linear-gradient(to right, #63bdfc, #8491ff);
-  height: 70%;
+  height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,7 +52,100 @@
 }
 
 .first-section .bottom {
-  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.first-section .bottom .down-button {
+  width: 30pt;
+  height: 30pt;
+  background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
+  background: linear-gradient(to right, #63bdfc, #8491ff);
+  border-radius: 15pt;
+  border: none;
+}
+
+.second-section {
+  height: 100vh;
+}
+
+.second-section .heading {
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.second-section .heading h1 {
+  background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
+  background: linear-gradient(to right, #63bdfc, #8491ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  padding-top: 20pt;
+  font-size: 50pt;
+  font-weight: bold;
+}
+
+.second-section .container {
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.second-section .container .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30%;
+  width: 40%;
+  border-radius: 15px;
+  border: solid;
+  border-color: black;
+  margin: 10pt 10pt 10pt 10pt;
+}
+
+.second-section .container .card:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
+  background: linear-gradient(to right, #63bdfc, #8491ff);
+  border: none;
+  height: 31%;
+  width: 41%;
+}
+
+.second-section .container .card:hover h2 {
+  color: white;
 }
 
 .user-img {
