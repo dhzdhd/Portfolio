@@ -7,6 +7,20 @@
   font-weight: 500;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+::-moz-selection {
+  color: white;
+  background-color: turquoise;
+}
+
+::selection {
+  color: white;
+  background-color: turquoise;
+}
+
 nav {
   background-color: transparent;
   height: 50pt;
