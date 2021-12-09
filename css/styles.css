@@ -134,6 +134,8 @@ nav button {
   border: solid;
   border-color: black;
   margin: 10pt 10pt 10pt 10pt;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .second-section .container .card:hover {
