@@ -7,6 +7,8 @@
 }
 
 $gradient: linear-gradient(to right, rgb(99, 189, 252), rgb(132, 145, 255));
+$h1-font: 50pt;
+$h2-font: 30pt;
 
 * {
     margin: 0;
@@ -23,14 +25,23 @@ html {
     background-color: turquoise;
 }
 
-nav {
-    background-color: transparent;
-    height: 50pt;
+.side-bar {
+    width: 5%;
+    height: 100vh;
+    position: fixed;
     display: flex;
-    position: sticky;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 
-    button {
-        position: sticky;
+    .fab {
+        font-size: 20pt;
+        margin-bottom: 15pt;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
@@ -59,13 +70,24 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
-
+        
         .down-button {
-            width: 30pt;
-            height: 30pt;
+            width: 50pt;
+            height: 50pt;
             background: $gradient;
             border-radius: 15pt;
             border: none;
+            
+            &:hover {
+                width: 55pt;
+                height: 55pt;
+                cursor: pointer;
+            }
+
+            .fas {
+                font-size: 20pt;
+                color: white;
+            }
         }
     }
 }
@@ -78,13 +100,14 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
+
         h1 {
             background: $gradient;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center;
             padding-top: 20pt;
-            font-size: 50pt;
+            font-size: $h1-font;
             font-weight: bold;
         }
     }
@@ -101,25 +124,48 @@ nav {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 30%;
+            height: 25%;
             width: 40%;
             border-radius: 15px;
             border: solid;
             border-color: black;
             margin: 10pt 10pt 10pt 10pt;
             transition-duration: 0.3s;
-        }
-
-        .card:hover {
-            background: $gradient;
-            border: none;
-            height: 31%;
-            width: 41%;
-
-            h2 {
-                color: white;
+        
+            &:hover {
+                background: $gradient;
+                border: none;
+                height: 26%;
+                width: 41%;
+    
+                h2 {
+                    color: white;
+                }
             }
         }
+    }
+}
+
+.third-section {
+    height: 100vh;
+    .top {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        column
+
+        h1 {
+            font-size: $h1-font;
+        }
+
+        h2 {
+            font-size: $h2-font;
+        }
+    }
+    .bottom {
+        height: 50%;
     }
 }
 

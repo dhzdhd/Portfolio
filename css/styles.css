@@ -21,19 +21,33 @@ html {
   background-color: turquoise;
 }
 
-nav {
-  background-color: transparent;
-  height: 50pt;
+.side-bar {
+  width: 5%;
+  height: 100vh;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: -webkit-sticky;
-  position: sticky;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
 }
 
-nav button {
-  position: -webkit-sticky;
-  position: sticky;
+.side-bar .fab {
+  font-size: 20pt;
+  margin-bottom: 15pt;
+}
+
+.side-bar .fab:hover {
+  cursor: pointer;
 }
 
 .first-section {
@@ -79,12 +93,23 @@ nav button {
 }
 
 .first-section .bottom .down-button {
-  width: 30pt;
-  height: 30pt;
+  width: 50pt;
+  height: 50pt;
   background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
   background: linear-gradient(to right, #63bdfc, #8491ff);
   border-radius: 15pt;
   border: none;
+}
+
+.first-section .bottom .down-button:hover {
+  width: 55pt;
+  height: 55pt;
+  cursor: pointer;
+}
+
+.first-section .bottom .down-button .fas {
+  font-size: 20pt;
+  color: white;
 }
 
 .second-section {
@@ -142,7 +167,7 @@ nav button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 30%;
+  height: 25%;
   width: 40%;
   border-radius: 15px;
   border: solid;
@@ -156,12 +181,46 @@ nav button {
   background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
   background: linear-gradient(to right, #63bdfc, #8491ff);
   border: none;
-  height: 31%;
+  height: 26%;
   width: 41%;
 }
 
 .second-section .container .card:hover h2 {
   color: white;
+}
+
+.third-section {
+  height: 100vh;
+}
+
+.third-section .top {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.third-section .top column
+h1 {
+  font-size: 50pt;
+}
+
+.third-section .top h2 {
+  font-size: 30pt;
+}
+
+.third-section .bottom {
+  height: 50%;
 }
 
 .user-img {
