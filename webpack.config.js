@@ -14,7 +14,7 @@ module.exports = {
     devServer: {
         publicPath: "/",
         contentBase: "./public",
-        port: 8081,
+        port: 8080,
     },
     module: {}
 }
