@@ -4,6 +4,17 @@ open Browser.Dom
 open Fetch
 open Thoth.Json
 
+let mutable flag = false
+
+module private Utils =
+    let switchTheme (event: Browser.Types.Event) =
+        if not flag then
+            document.documentElement.setAttribute("theme", "dark")
+            flag <- true
+        else
+            document.documentElement.setAttribute("theme", "light")
+            flag <- false
+
 module private Facts =
     let updateTodayText text =
         let todayFactText = document.querySelector(".today-fact-text") :?> Browser.Types.HTMLHeadingElement
@@ -25,10 +36,15 @@ module private Facts =
             | Ok resp, "random" -> updateRandomText resp.Text
             | Error decodingError, "today" -> updateTodayText decodingError
             | Error decodingError, "random" -> updateRandomText decodingError
+            | _, _ -> ()
+
         )
         |> ignore
 
 Facts.getFact "https://uselessfacts.jsph.pl/today.json?language=en" "today"
+
+let themeSwitch = document.querySelector(""".theme-slider-label input[type="checkbox"]""") :?> Browser.Types.HTMLLabelElement
+themeSwitch.addEventListener ("change", Utils.switchTheme)
 
 let myButton = document.querySelector(".get-fact") :?> Browser.Types.HTMLButtonElement
 myButton.onclick <- fun _ ->
