@@ -10,6 +10,20 @@ $gradient: linear-gradient(to right, rgb(99, 189, 252), rgb(132, 145, 255));
 $h1-font: 50pt;
 $h2-font: 30pt;
 
+// Light theme
+:root {
+    --primary-color: white;
+    --text-color: black;
+    --secondary-text-color: white;
+}
+ 
+// Dark theme
+[theme="dark"] {
+    --primary-color: black;
+    --text-color: white;
+    --secondary-text-color: black;
+}
+ 
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +37,65 @@ html {
 ::selection {
     color: white;
     background-color: turquoise;
+}
+
+.theme-slider-container {
+    position: fixed;
+    display: flex;
+    flex-direction: row-reverse;
+    top: 7pt;
+    right: 10pt;
+    width: 100%;
+    height: 25pt;
+    z-index: 1;
+
+    .theme-slider-label {
+        input {
+            display: none;
+        }
+        position: fixed;
+        width: 45pt;
+        height: 25pt;
+    }
+    
+    .slider {
+        background-color: black;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .4s;
+
+        &, &::before {
+            border-radius: 15pt;
+        }
+
+        &::before {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            bottom: 4px;
+            left: 4px;
+            height: 26px;
+            width: 26px;
+            position: absolute;
+            transition: ease-in-out 0.5s;
+        }
+    }
+    
+    #checkbox:checked  {
+        & + .slider{
+            background-color: rgb(95, 186, 255);
+        }
+
+        & + .slider:before {
+            transform: translateX(26px);
+        }
+    }
 }
 
 .side-bar {
@@ -88,7 +161,7 @@ html {
         h1 {
             text-align: center;
             margin-top: 20pt;
-            color: white;
+            color: var(--secondary-text-color);
             font-size: 60pt;
             transition-duration: 0.5s;
         
@@ -100,9 +173,11 @@ html {
 
     .bottom {
         height: 20%;
+        background-color: var(--primary-color);
         display: flex;
         justify-content: center;
         align-items: center;
+        transition-duration: 0.5s;
         
         .down-button {
             width: 50pt;
@@ -120,7 +195,7 @@ html {
 
             .fas {
                 font-size: 20pt;
-                color: white;
+                color: var(--secondary-text-color);
             }
         }
     }
@@ -128,6 +203,7 @@ html {
 
 .second-section {
     height: 100vh;
+    background-color: var(--primary-color);
 
     .heading {
         height: 20%;
@@ -163,7 +239,8 @@ html {
             width: 40%;
             border-radius: 15px;
             border: solid;
-            border-color: black;
+            border-color: var(--text-color);
+            color: var(--text-color);
             margin: 10pt 10pt 10pt 10pt;
             transition-duration: 0.3s;
         
@@ -174,7 +251,7 @@ html {
                 width: 41%;
     
                 h2 {
-                    color: white;
+                    color: var(--text-color);
                 }
             }
         }
@@ -194,7 +271,7 @@ html {
         justify-content: center;
 
         .fact-heading {
-            color: white;
+            color: var(--secondary-text-color);
             font-size: $h1-font;
             text-align: center;
             margin-bottom: 15pt;
@@ -205,7 +282,7 @@ html {
             margin-left: 10%;
             margin-right: 10%;
             text-align: center;
-            color: white;
+            color: var(--secondary-text-color);
             font-size: $h2-font;
             transition-duration: 0.5s;
         }
@@ -217,13 +294,14 @@ html {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        background-color: var(--primary-color);
 
         .top-half {
             display: flex;
             align-items: center;
             justify-content: center;
             .fact-heading {
-                color: black;
+                color: var(--text-color);
                 font-size: $h1-font;
                 text-align: center;
                 transition-duration: 0.5s;
@@ -258,7 +336,7 @@ html {
                 margin-left: 10%;
                 margin-right: 10%;
                 text-align: center;
-                color: black;
+                color: var(--text-color);
                 font-size: $h2-font;
                 transition-duration: 0.5s;
             }
