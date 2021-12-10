@@ -1,41 +1,34 @@
-module App
+module E
 
 open Browser.Dom
-// open Octokit
+open Fetch
+open Thoth.Json
 
-// open FsHttp
-// open FsHttp.DslCE
+module private facts =
+    let update text =
+        let todayFact = document.querySelector(".today-fact-text") :?> Browser.Types.HTMLHeadingElement
+        todayFact.innerText <- text
+        ()
 
-// module private repositories =
-//     let getBio () =
-//         http {
-//             POST "https://reqres.in/api/users"
-//             CacheControl "no-cache"
-//             body
-//             json """
-//             {
-//                 "name": "morpheus",
-//                 "job": "leader"
-//             }
-//             """
-//         } 
-//         |> Response.toJson 
-//     //     let client = GitHubClient (ProductHeaderValue "dhzdhd")
-//     //     let a = client.User.Get "dhzdhd"
-//     //     a.Result.Bio
-//     ()
+    let getTodayFact (url:string) =
+        fetch url []
+        |> Promise.bind (fun res -> res.text())
+        |> Promise.map (fun txt -> 
+            let decoded = Decode.Auto.fromString<{|Text: string|}> (txt, caseStrategy = CamelCase)
+            match decoded with
+            | Ok resp ->  
+                update resp.Text
+            | Error decodingError -> 
+                printfn "Error"
+        )
+        |> ignore
+    ()
 
-// Mutable variable to count the number of times we clicked the button
-let mutable count = 0
-
-// Get a reference to our button and cast the Element to an HTMLButtonElement
 let myButton = document.querySelector(".down-button") :?> Browser.Types.HTMLButtonElement
 
 
-// Register our listener
-myButton.onclick <- fun _ ->
-    // let e = repositories.getBio ()
-    // printfn $"{e}"
-    ()
+facts.getTodayFact "https://uselessfacts.jsph.pl/today.json?language=en"
+// myButton.onclick <- fun _ ->
+//     repositories.getBio ()
 
 
