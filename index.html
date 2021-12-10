@@ -13,18 +13,28 @@
 
 <body>
   <div class="side-bar">
-    <a href="https://github.com/dhzdhd" target="_blank"><span class="fab fa-github"></span></a>
-    <a href="https://github.com/dhzdhd" target="_blank"><span class="fab fa-discord"></span></a>
-    <a href="https://www.instagram.com/dhzdhd_/" target="_blank"><span class="fab fa-instagram"></span></a>
+    <a rel="noopener noreferrer" title="Github" href="https://github.com/dhzdhd" target="_blank">
+      <span class="fab fa-github"></span>
+    </a>
+    <a rel="noopener noreferrer" title="Discord" href="https://github.com/dhzdhd" target="_blank">
+      <span class="fab fa-discord"></span>
+    </a>
+    <a rel="noopener noreferrer" title="Instagram" href="https://www.instagram.com/dhzdhd_/" target="_blank">
+      <span class="fab fa-instagram"></span>
+    </a>
   </div>
 
   <section class="first-section">
     <div class="top">
-      <img class="user-img" src="assets/icons/dhzdhd.png" />
+      <img class="user-img" alt="User image" src="assets/icons/dhzdhd.png" />
       <h1>Hello. I am dhzdhd.</h1>
     </div>
     <div class="bottom">
-      <a href="#projects"><button class="down-button"><span class="fas fa-arrow-down"></span></button></a>
+      <a rel="noopener noreferrer" title="Projects Section" href="#projects">
+        <button class="down-button" title="Down arrow">
+          <span class="fas fa-arrow-down"></span>
+        </button>
+      </a>
     </div>
   </section>
 
@@ -71,7 +81,15 @@
       <h1 class="fact-heading">Today's useless(?) fact</h1>
       <h2 class="today-fact-text"></h2>
     </div>
-    <div class="bottom"></div>
+    <div class="bottom">
+      <div class="top-half">
+        <h1 class="fact-heading">Get a random fact</h1>
+        <button title="Get fact" class="get-fact fas fa-arrow-right"></button>
+      </div>
+      <div class="bottom-half">
+        <h2 class="random-fact-text">eeeeeeeeeee</h2>
+      </div>
+    </div>
   </section>
 
   <script src="bundle.js"></script>
