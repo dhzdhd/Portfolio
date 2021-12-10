@@ -86,6 +86,7 @@ html {
         }
 
         h1 {
+            text-align: center;
             margin-top: 20pt;
             color: white;
             font-size: 60pt;
@@ -195,13 +196,15 @@ html {
         .fact-heading {
             color: white;
             font-size: $h1-font;
+            text-align: center;
             margin-bottom: 15pt;
             transition-duration: 0.5s;
         }
 
-        h2 {
+        .today-fact-text {
             margin-left: 10%;
             margin-right: 10%;
+            text-align: center;
             color: white;
             font-size: $h2-font;
             transition-duration: 0.5s;
@@ -210,6 +213,56 @@ html {
 
     .bottom {
         height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .top-half {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .fact-heading {
+                color: black;
+                font-size: $h1-font;
+                text-align: center;
+                transition-duration: 0.5s;
+                margin-right: 10pt;
+                margin-bottom: 15pt;
+            }
+
+            .get-fact {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-align: center;
+                margin-left: 10pt;
+                font-size: $h1-font;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                margin-bottom: 15pt;
+
+                &:hover {
+                    font-size: $h1-font + 10pt;
+                }
+            }
+        }
+
+        .bottom-half {
+            .random-fact-text {
+                margin-left: 10%;
+                margin-right: 10%;
+                text-align: center;
+                color: black;
+                font-size: $h2-font;
+                transition-duration: 0.5s;
+            }
+        }
     }
 }
 
@@ -231,13 +284,33 @@ html {
     .third-section {
         .top {
             .fact-heading {
-                margin-left: 15%;
+                margin-left: 10%;
                 margin-right: 10%;
                 font-size: 30pt;
             }
-            h2 {
-                margin-left: 15%;
+            .today-fact-text {
                 font-size: 20pt;
+            }
+        }
+
+        .bottom {
+            .top-half {
+                .fact-heading {
+                    font-size: 30pt;
+                }
+                .get-fact {
+                    font-size: $h2-font;
+
+                    &:hover {
+                        font-size: $h2-font + 10pt;
+                    }
+                }
+            }
+
+            .bottom-half {
+                .random-fact-text {
+                    font-size: 20pt;
+                }
             }
         }
     }
