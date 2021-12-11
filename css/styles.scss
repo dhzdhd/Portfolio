@@ -45,9 +45,8 @@ html {
     flex-direction: row-reverse;
     top: 7pt;
     right: 10pt;
-    width: 100%;
     height: 25pt;
-    z-index: 1;
+    z-index: 2;
 
     .theme-slider-label {
         input {
@@ -106,6 +105,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: ease-out 0.3s;
     z-index: 1;
 
     a {
@@ -114,7 +114,8 @@ html {
 
     .fab {
         font-size: 20pt;
-        margin-bottom: 15pt;
+        margin-bottom: 10pt;
+        margin-top: 10pt;
         transition-duration: 0.3s;
         background-color: white;
         background: rgb(43, 43, 43);
@@ -124,6 +125,8 @@ html {
         border-radius: 15pt;
         display: flex;
         align-items: center;
+        align-content: center;
+        align-self: center;
         justify-content: center;
 
         &:hover {
@@ -196,6 +199,7 @@ html {
             .fas {
                 font-size: 20pt;
                 color: var(--secondary-text-color);
+                transition-duration: 0.5s;
             }
         }
     }
@@ -204,6 +208,7 @@ html {
 .second-section {
     height: 100vh;
     background-color: var(--primary-color);
+    transition-duration: 0.5s;
 
     .heading {
         height: 20%;
@@ -251,7 +256,7 @@ html {
                 width: 41%;
     
                 h2 {
-                    color: var(--text-color);
+                    color: var(--secondary-text-color);
                 }
             }
         }
@@ -295,6 +300,7 @@ html {
         align-items: center;
         justify-content: center;
         background-color: var(--primary-color);
+        transition-duration: 0.5s;
 
         .top-half {
             display: flex;
@@ -346,7 +352,18 @@ html {
 
 @media screen and (max-width: 900px) {
     .side-bar {
-        display: none;
+        // display: none;
+        width: 100%;
+        height: 40pt;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        z-index: 1;
+
+        .fab {
+            margin-right: 5pt;
+            margin-left: 5pt;
+        }
     }
 
     .first-section {

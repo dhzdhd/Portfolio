@@ -44,9 +44,8 @@ html {
           flex-direction: row-reverse;
   top: 7pt;
   right: 10pt;
-  width: 100%;
   height: 25pt;
-  z-index: 1;
+  z-index: 2;
 }
 
 .theme-slider-container .theme-slider-label {
@@ -122,6 +121,8 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
   z-index: 1;
 }
 
@@ -131,7 +132,8 @@ html {
 
 .side-bar .fab {
   font-size: 20pt;
-  margin-bottom: 15pt;
+  margin-bottom: 10pt;
+  margin-top: 10pt;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
   background-color: white;
@@ -146,6 +148,10 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -245,11 +251,15 @@ html {
 .first-section .bottom .down-button .fas {
   font-size: 20pt;
   color: var(--secondary-text-color);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .second-section {
   height: 100vh;
   background-color: var(--primary-color);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .second-section .heading {
@@ -324,7 +334,7 @@ html {
 }
 
 .second-section .container .card:hover h2 {
-  color: var(--text-color);
+  color: var(--secondary-text-color);
 }
 
 .third-section {
@@ -385,6 +395,8 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: var(--primary-color);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .third-section .bottom .top-half {
@@ -450,7 +462,21 @@ html {
 
 @media screen and (max-width: 900px) {
   .side-bar {
-    display: none;
+    width: 100%;
+    height: 40pt;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    z-index: 1;
+  }
+  .side-bar .fab {
+    margin-right: 5pt;
+    margin-left: 5pt;
   }
   .first-section .top h1 {
     margin-left: 10%;
