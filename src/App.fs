@@ -3,9 +3,20 @@ module App
 open Browser.Dom
 open Fetch
 open Thoth.Json
+open Fable.SimpleJson
 
 type GithubJsonRecord = {
-    Text: string
+    owner: string
+    repo: string
+    link: string
+    description: string
+    language: string
+    stars: int
+    forks: int
+}
+
+type A = {
+    lst: List<string>
 }
 
 let mutable flag = false
@@ -20,16 +31,26 @@ module private Utils =
             flag <- false
 
 module private Github =
-    let updateCards = ()
+    let updateCards (ghRecord: GithubJsonRecord) = 
+        
+        ()
 
     let getRepoInfo =
         fetch "https://gh-pinned-repos-5l2i19um3.vercel.app/?username=dhzdhd" []
-        |> Promise.bind (fun res -> res.text ())
-        |> Promise.map (fun txt ->
-            let decoded = Decode.Auto.fromString<{|E:int|}> (txt, caseStrategy = CamelCase)
-            match decoded with
-            | Ok resp -> printfn $"{resp.E}"
-            | Error decodingError -> printfn $"{decodingError}"
+        |> Promise.bind (fun res -> res.text())
+        |> Promise.map (fun txt -> txt.Replace ('[', ' '))
+        |> Promise.map (fun txt -> txt.Replace (']', ' '))
+        |> Promise.map (fun txt -> txt.Trim ())
+        |> Promise.map (fun txt -> txt.Split '}')
+        |> Promise.map (fun txt -> txt|> Array.map(fun ele -> ele.TrimStart ','))
+        |> Promise.map (fun txt -> txt|> Array.map(fun ele -> $"{ele}}}"))
+        |> Promise.map (fun lst ->
+            lst |> Array.map ( fun txt -> 
+                let decoded = Decode.Auto.fromString<GithubJsonRecord> (txt, caseStrategy = CamelCase)
+                match decoded with
+                | Ok resp -> updateCards resp
+                | Error decodingError -> printfn $"{decodingError}"
+            )
         )
         |> ignore
 
