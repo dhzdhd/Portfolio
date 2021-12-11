@@ -4,6 +4,10 @@ open Browser.Dom
 open Fetch
 open Thoth.Json
 
+type GithubJsonRecord = {
+    Text: string
+}
+
 let mutable flag = false
 
 module private Utils =
@@ -14,6 +18,20 @@ module private Utils =
         else
             document.documentElement.setAttribute("theme", "light")
             flag <- false
+
+module private Github =
+    let updateCards = ()
+
+    let getRepoInfo =
+        fetch "https://gh-pinned-repos-5l2i19um3.vercel.app/?username=dhzdhd" []
+        |> Promise.bind (fun res -> res.text ())
+        |> Promise.map (fun txt ->
+            let decoded = Decode.Auto.fromString<{|E:int|}> (txt, caseStrategy = CamelCase)
+            match decoded with
+            | Ok resp -> printfn $"{resp.E}"
+            | Error decodingError -> printfn $"{decodingError}"
+        )
+        |> ignore
 
 module private Facts =
     let updateTodayText text =
@@ -42,6 +60,7 @@ module private Facts =
         |> ignore
 
 Facts.getFact "https://uselessfacts.jsph.pl/today.json?language=en" "today"
+Github.getRepoInfo
 
 let themeSwitch = document.querySelector(""".theme-slider-label input[type="checkbox"]""") :?> Browser.Types.HTMLLabelElement
 themeSwitch.addEventListener ("change", Utils.switchTheme)
