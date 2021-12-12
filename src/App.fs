@@ -4,6 +4,7 @@ open Browser.Dom
 open Fetch
 open Thoth.Json
 open Fable.SimpleJson
+open System.Text.RegularExpressions
 
 type GithubJsonRecord = {
     owner: string
@@ -13,10 +14,6 @@ type GithubJsonRecord = {
     language: string
     stars: int
     forks: int
-}
-
-type A = {
-    lst: List<string>
 }
 
 let mutable flag = false
@@ -31,26 +28,21 @@ module private Utils =
             flag <- false
 
 module private Github =
-    let updateCards (ghRecord: GithubJsonRecord) = 
+    let updateCards (ghRecord: GithubJsonRecord) (index: int) = 
         
         ()
 
     let getRepoInfo =
         fetch "https://gh-pinned-repos-5l2i19um3.vercel.app/?username=dhzdhd" []
         |> Promise.bind (fun res -> res.text())
-        |> Promise.map (fun txt -> txt.Replace ('[', ' '))
-        |> Promise.map (fun txt -> txt.Replace (']', ' '))
-        |> Promise.map (fun txt -> txt.Trim ())
-        |> Promise.map (fun txt -> txt.Split '}')
-        |> Promise.map (fun txt -> txt|> Array.map(fun ele -> ele.TrimStart ','))
-        |> Promise.map (fun txt -> txt|> Array.map(fun ele -> $"{ele}}}"))
+        |> Promise.map(fun txt -> Regex.Matches (txt, "{.*?}"))
         |> Promise.map (fun lst ->
-            lst |> Array.map ( fun txt -> 
-                let decoded = Decode.Auto.fromString<GithubJsonRecord> (txt, caseStrategy = CamelCase)
+            for i in 0..6 do
+                let decoded = Decode.Auto.fromString<GithubJsonRecord> ((lst.Item i).ToString (), caseStrategy = CamelCase)
                 match decoded with
-                | Ok resp -> updateCards resp
+                | Ok resp -> updateCards resp i
                 | Error decodingError -> printfn $"{decodingError}"
-            )
+            
         )
         |> ignore
 
