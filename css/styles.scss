@@ -238,8 +238,9 @@ html {
 
         .card {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             height: 25%;
             width: 40%;
             border-radius: 15px;
@@ -247,13 +248,24 @@ html {
             border-color: var(--text-color);
             color: var(--text-color);
             margin: 10pt 10pt 10pt 10pt;
+            padding: 0pt 0pt 0pt 0pt;
             transition-duration: 0.3s;
+
+            .card-title-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                height: 30%;
+                padding-left: 10pt;
+                font-size: 20pt;
+            }
         
             &:hover {
                 background: $gradient;
                 border: none;
-                height: 26%;
-                width: 41%;
+                transform: scale(1.04);
     
                 h2 {
                     color: var(--secondary-text-color);
