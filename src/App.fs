@@ -3,7 +3,6 @@ module App
 open Browser.Dom
 open Fetch
 open Thoth.Json
-open Fable.SimpleJson
 open System.Text.RegularExpressions
 
 type GithubJsonRecord = {
@@ -29,6 +28,25 @@ module private Utils =
 
 module private Github =
     let updateCards (ghRecord: GithubJsonRecord) (index: int) = 
+        let card = document.querySelector $"#card-%i{index + 1}" :?> Browser.Types.HTMLDivElement
+
+        let link = document.querySelector $"#link-%i{index + 1}" :?> Browser.Types.HTMLLinkElement
+        link.href <- ghRecord.link
+
+        let title = card.querySelector ".card-title"
+        title.textContent <- ghRecord.repo
+
+        let desc = card.querySelector ".card-desc"
+        desc.textContent <- if ghRecord.description.Equals "" then "No description" else ghRecord.description
+        
+        let language = card.querySelector ".card-lang"
+        language.textContent <- ghRecord.language
+        
+        let stars = card.querySelector ".card-stars"
+        stars.textContent <- ghRecord.stars.ToString ()
+
+        let forks = card.querySelector ".card-forks"
+        forks.textContent <- ghRecord.forks.ToString ()
         
         ()
 
