@@ -97,7 +97,7 @@ html {
 }
 
 .side-bar {
-    width: 40pt;
+    width: 4rem;
     height: 100vh;
     position: fixed;
     display: flex;
@@ -116,9 +116,8 @@ html {
         margin-bottom: 10pt;
         margin-top: 10pt;
         transition-duration: 0.3s;
-        background-color: white;
-        background: rgb(43, 43, 43);
-        color: white;
+        color: var(--text-color);
+        background-color: var(--primary-color);
         height: 30pt;
         width: 30pt;
         border-radius: 15pt;
@@ -129,11 +128,7 @@ html {
         justify-content: center;
 
         &:hover {
-            cursor: pointer;
-            font-size: 23pt;
-            height: 32pt;
-            width: 32pt;
-            border-radius: 16pt;
+            transform: scale(1.1);
         }
     }
 }
@@ -205,6 +200,12 @@ html {
 }
 
 .second-section {
+    height: 100vh;
+    background-color: var(--primary-color);
+    transition-duration: 0.5s;
+}
+
+.third-section {
     height: 100vh;
     background-color: var(--primary-color);
     transition-duration: 0.5s;
@@ -327,7 +328,7 @@ html {
     }
 }
 
-.third-section {
+.fourth-section {
     height: 100vh;
 
     .top {

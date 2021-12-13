@@ -60,7 +60,6 @@ module private Github =
                 match decoded with
                 | Ok resp -> updateCards resp i
                 | Error decodingError -> printfn $"{decodingError}"
-            
         )
         |> ignore
 
@@ -86,7 +85,6 @@ module private Facts =
             | Error decodingError, "today" -> updateTodayText decodingError
             | Error decodingError, "random" -> updateRandomText decodingError
             | _, _ -> ()
-
         )
         |> ignore
 
