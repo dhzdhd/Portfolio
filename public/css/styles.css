@@ -14,22 +14,21 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 }
 
-html {
-  scroll-behavior: smooth;
+*::-moz-selection {
+  color: white;
+  background-color: #34e7d5;
 }
 
-::-moz-selection {
+*::selection {
   color: white;
-  background-color: turquoise;
-}
-
-::selection {
-  color: white;
-  background-color: turquoise;
+  background-color: #34e7d5;
 }
 
 .theme-slider-container {
@@ -41,40 +40,36 @@ html {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-  top: 7pt;
-  right: 10pt;
-  height: 25pt;
-  z-index: 2;
+  top: 1rem;
+  right: 1rem;
 }
 
 .theme-slider-container .theme-slider-label {
-  position: fixed;
-  width: 45pt;
-  height: 25pt;
+  width: 4rem;
+  height: 2rem;
 }
 
-.theme-slider-container .theme-slider-label input {
+.theme-slider-container .theme-slider-label #checkbox {
   display: none;
 }
 
 .theme-slider-container .slider {
   background-color: black;
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
   position: absolute;
+  left: 0;
   right: 0;
   top: 0;
-  -webkit-transition: .4s;
-  transition: .4s;
+  bottom: 0;
+  cursor: pointer;
 }
 
 .theme-slider-container .slider, .theme-slider-container .slider::before {
-  border-radius: 15pt;
+  border-radius: 1rem;
 }
 
 .theme-slider-container .slider::before {
   color: white;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,14 +79,12 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: transparent;
-  bottom: 4px;
-  left: 4px;
-  height: 26px;
-  width: 26px;
-  position: absolute;
-  -webkit-transition: ease-in-out 0.5s;
-  transition: ease-in-out 0.5s;
+  bottom: 0.25rem;
+  left: 0.25rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  -webkit-transition: inherit;
+  transition: inherit;
 }
 
 .theme-slider-container #checkbox:checked + .slider {
@@ -99,8 +92,8 @@ html {
 }
 
 .theme-slider-container #checkbox:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-          transform: translateX(26px);
+  -webkit-transform: translateX(2rem);
+          transform: translateX(2rem);
 }
 
 .side-bar {
@@ -120,9 +113,6 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: ease-out 0.3s;
-  transition: ease-out 0.3s;
-  z-index: 1;
 }
 
 .side-bar a {
@@ -130,29 +120,25 @@ html {
 }
 
 .side-bar .fab {
-  font-size: 20pt;
-  margin-bottom: 10pt;
-  margin-top: 10pt;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  color: var(--text-color);
-  background-color: var(--primary-color);
-  height: 30pt;
-  width: 30pt;
-  border-radius: 15pt;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+  margin-top: 0.7rem;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  height: 2.6rem;
+  width: 2.6rem;
+  border-radius: 1.3rem;
 }
 
 .side-bar .fab:hover {
@@ -165,9 +151,6 @@ html {
 }
 
 .first-section .top {
-  background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
-  background: linear-gradient(to right, #63bdfc, #8491ff);
-  height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,34 +158,30 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-column-gap: 5em;
-          column-gap: 5em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
+  background: linear-gradient(to right, #63bdfc, #8491ff);
+  height: 80%;
 }
 
 .first-section .top .user-img {
-  width: 200pt;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  width: 16rem;
   border: solid;
   border-color: aquamarine;
-  border-radius: 100pt;
-  margin-bottom: 20pt;
+  border-radius: 8rem;
+  margin-bottom: 2rem;
 }
 
 .first-section .top h1 {
   text-align: center;
-  margin-top: 20pt;
+  margin-top: 2rem;
   color: var(--secondary-text-color);
-  font-size: 60pt;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  font-size: 5rem;
 }
 
 .first-section .top h1:hover, .first-section .top h1:focus {
@@ -222,62 +201,39 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
 }
 
 .first-section .bottom .down-button {
-  width: 50pt;
-  height: 50pt;
+  width: 5rem;
+  height: 5rem;
   background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
   background: linear-gradient(to right, #63bdfc, #8491ff);
-  border-radius: 15pt;
   border: none;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  border-radius: 1.5rem;
 }
 
 .first-section .bottom .down-button:hover {
-  width: 55pt;
-  height: 55pt;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   cursor: pointer;
 }
 
 .first-section .bottom .down-button .fas {
-  font-size: 20pt;
+  font-size: 2rem;
   color: var(--secondary-text-color);
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
 }
 
 .second-section {
   height: 100vh;
   background-color: var(--primary-color);
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
 }
 
 .third-section {
   height: 100vh;
   background-color: var(--primary-color);
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
 }
 
 .third-section .heading {
-  height: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.third-section .heading h1 {
   background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
   background: linear-gradient(to right, #63bdfc, #8491ff);
   background-clip: text;
@@ -285,7 +241,7 @@ html {
   -webkit-text-fill-color: transparent;
   text-align: center;
   padding-top: 20pt;
-  font-size: 50pt;
+  font-size: 4rem;
   font-weight: bold;
 }
 
@@ -450,7 +406,7 @@ html {
 
 .fourth-section .top .fact-heading {
   color: var(--secondary-text-color);
-  font-size: 50pt;
+  font-size: 5rem;
   text-align: center;
   margin-bottom: 15pt;
   -webkit-transition-duration: 0.5s;
@@ -462,7 +418,7 @@ html {
   margin-right: 10%;
   text-align: center;
   color: var(--secondary-text-color);
-  font-size: 30pt;
+  font-size: 4rem;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
@@ -501,7 +457,7 @@ html {
 
 .fourth-section .bottom .top-half .fact-heading {
   color: var(--text-color);
-  font-size: 50pt;
+  font-size: 5rem;
   text-align: center;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
@@ -525,7 +481,7 @@ html {
   -webkit-text-fill-color: transparent;
   text-align: center;
   margin-left: 10pt;
-  font-size: 50pt;
+  font-size: 5rem;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -535,7 +491,7 @@ html {
 }
 
 .fourth-section .bottom .top-half .get-fact:hover {
-  font-size: 60pt;
+  font-size: 6rem;
 }
 
 .fourth-section .bottom .bottom-half .random-fact-text {
@@ -543,7 +499,7 @@ html {
   margin-right: 10%;
   text-align: center;
   color: var(--text-color);
-  font-size: 30pt;
+  font-size: 4rem;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
@@ -583,10 +539,10 @@ html {
     font-size: 30pt;
   }
   .third-section .bottom .top-half .get-fact {
-    font-size: 30pt;
+    font-size: 4rem;
   }
   .third-section .bottom .top-half .get-fact:hover {
-    font-size: 40pt;
+    font-size: 5rem;
   }
   .third-section .bottom .bottom-half .random-fact-text {
     font-size: 20pt;

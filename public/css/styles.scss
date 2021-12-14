@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
-@mixin font($weight: 500) {
+@mixin font() {
     font-family: 'Montserrat', sans-serif;
-    font-weight: $weight;
+    font-weight: 500;
 }
 
+// Variables
 $gradient: linear-gradient(to right, rgb(99, 189, 252), rgb(132, 145, 255));
-$h1-font: 50pt;
-$h2-font: 30pt;
+$h1-font: 5rem;
+$h2-font: 4rem;
 
 // Light theme
 :root {
@@ -26,62 +27,56 @@ $h2-font: 30pt;
 * {
     margin: 0;
     padding: 0;
-    @include font();
-}
-
-html {
     scroll-behavior: smooth;
-}
+    transition-duration: 0.5s;
+    @include font();
 
-::selection {
-    color: white;
-    background-color: turquoise;
+    &::selection {
+        color: white;
+        background-color: rgb(52, 231, 213);
+    }
 }
 
 .theme-slider-container {
     position: fixed;
     display: flex;
     flex-direction: row-reverse;
-    top: 7pt;
-    right: 10pt;
-    height: 25pt;
-    z-index: 2;
+    top: 1rem;
+    right: 1rem;
 
     .theme-slider-label {
-        input {
+        width: 4rem;
+        height: 2rem;
+
+        #checkbox {
             display: none;
         }
-        position: fixed;
-        width: 45pt;
-        height: 25pt;
     }
     
     .slider {
         background-color: black;
-        bottom: 0;
-        cursor: pointer;
-        left: 0;
         position: absolute;
+        left: 0;
         right: 0;
         top: 0;
-        transition: .4s;
+        bottom: 0;
+        cursor: pointer;
 
         &, &::before {
-            border-radius: 15pt;
+            border-radius: 1rem;
         }
 
         &::before {
             color: white;
+            position: absolute;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: transparent;
-            bottom: 4px;
-            left: 4px;
-            height: 26px;
-            width: 26px;
-            position: absolute;
-            transition: ease-in-out 0.5s;
+            bottom: 0.25rem;
+            left: 0.25rem;
+            height: 1.5rem;
+            width: 1.5rem;
+            transition: inherit;
         }
     }
     
@@ -91,7 +86,7 @@ html {
         }
 
         & + .slider:before {
-            transform: translateX(26px);
+            transform: translateX(2rem);
         }
     }
 }
@@ -104,28 +99,24 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: ease-out 0.3s;
-    z-index: 1;
 
     a {
         color: transparent;
     }
 
     .fab {
-        font-size: 20pt;
-        margin-bottom: 10pt;
-        margin-top: 10pt;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 0.7rem;
+        margin-top: 0.7rem;
         transition-duration: 0.3s;
         color: var(--text-color);
         background-color: var(--primary-color);
-        height: 30pt;
-        width: 30pt;
-        border-radius: 15pt;
-        display: flex;
-        align-items: center;
-        align-content: center;
-        align-self: center;
-        justify-content: center;
+        height: 2.6rem;
+        width: 2.6rem;
+        border-radius: 1.3rem;
 
         &:hover {
             transform: scale(1.1);
@@ -137,30 +128,26 @@ html {
     height: 100vh;
 
     .top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background: linear-gradient(to right, rgb(99, 189, 252), rgb(132, 145, 255));
         height: 80%;
 
-        display: flex;
-        flex-direction: column;
-        column-gap: 5em;
-        justify-content: center;
-        align-items: center;
-
         .user-img {
-            width: 200pt;
-            align-self: center;
+            width: 16rem;
             border: solid;
             border-color: aquamarine;
-            border-radius: 100pt;
-            margin-bottom: 20pt;
+            border-radius: 8rem;
+            margin-bottom: 2rem;
         }
 
         h1 {
             text-align: center;
-            margin-top: 20pt;
+            margin-top: 2rem;
             color: var(--secondary-text-color);
-            font-size: 60pt;
-            transition-duration: 0.5s;
+            font-size: $h1-font;
         
             &:hover, &:focus {
                 transform: rotateZ(2deg);
@@ -174,26 +161,22 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
-        transition-duration: 0.5s;
         
         .down-button {
-            width: 50pt;
-            height: 50pt;
+            width: 5rem;
+            height: 5rem;
             background: $gradient;
-            border-radius: 15pt;
             border: none;
-            transition-duration: 0.3s;
+            border-radius: 1.5rem;
             
             &:hover {
-                width: 55pt;
-                height: 55pt;
+                transform: scale(1.1);
                 cursor: pointer;
             }
 
             .fas {
-                font-size: 20pt;
+                font-size: 2rem;
                 color: var(--secondary-text-color);
-                transition-duration: 0.5s;
             }
         }
     }
@@ -202,30 +185,21 @@ html {
 .second-section {
     height: 100vh;
     background-color: var(--primary-color);
-    transition-duration: 0.5s;
 }
 
 .third-section {
     height: 100vh;
     background-color: var(--primary-color);
-    transition-duration: 0.5s;
 
     .heading {
-        height: 20%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        h1 {
-            background: $gradient;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-            padding-top: 20pt;
-            font-size: $h1-font;
-            font-weight: bold;
-        }
+        background: $gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        padding-top: 20pt;
+        font-size: $h2-font;
+        font-weight: bold;
     }
 
     .container {
@@ -397,7 +371,7 @@ html {
                 margin-bottom: 15pt;
 
                 &:hover {
-                    font-size: $h1-font + 10pt;
+                    font-size: $h1-font + 1rem;
                 }
             }
         }
@@ -462,7 +436,7 @@ html {
                     font-size: $h2-font;
 
                     &:hover {
-                        font-size: $h2-font + 10pt;
+                        font-size: $h2-font + 1rem;
                     }
                 }
             }

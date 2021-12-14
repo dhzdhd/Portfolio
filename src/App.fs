@@ -55,7 +55,7 @@ module private Github =
         |> Promise.bind (fun res -> res.text())
         |> Promise.map(fun txt -> Regex.Matches (txt, "{.*?}"))
         |> Promise.map (fun lst ->
-            for i in 0..6 do
+            for i in 0..lst.Count do
                 let decoded = Decode.Auto.fromString<GithubJsonRecord> ((lst.Item i).ToString (), caseStrategy = CamelCase)
                 match decoded with
                 | Ok resp -> updateCards resp i
