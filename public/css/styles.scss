@@ -156,6 +156,13 @@ $h4-font: 2rem;
             margin-bottom: 2rem;
         }
 
+        @media screen and (max-height: 700px) {
+            .user-img {
+                width: 12rem;
+                margin-bottom: 0;
+            }
+        }
+
         h1 {
             text-align: center;
             margin-top: 2rem;
@@ -205,18 +212,18 @@ $h4-font: 2rem;
         padding-top: 1rem;
     }
 
-    @media screen and (max-width: 900px) {
-        .top, .bottom {
-            .heading {
-                font-size: $h3-font;
-            }
-        }
-    }
+    // @media screen and (max-width: 900px) {
+    //     .top, .bottom {
+    //         .heading {
+    //             font-size: $h3-font;
+    //         }
+    //     }
+    // }
 
     .top {
         height: 50%;
         color: var(--text-color);
-        font-size: $h2-font;
+        font-size: 0.5rem;
 
         .heading {
             padding-bottom: 1rem;
@@ -232,7 +239,7 @@ $h4-font: 2rem;
     .bottom {
         height: 50%;
         color: var(--text-color);
-        font-size: $h2-font;
+        font-size: 0.5rem;
 
         .heading {
             text-align: right;

@@ -194,6 +194,13 @@
   margin-bottom: 2rem;
 }
 
+@media screen and (max-height: 700px) {
+  .first-section .top .user-img {
+    width: 12rem;
+    margin-bottom: 0;
+  }
+}
+
 .first-section .top h1 {
   text-align: center;
   margin-top: 2rem;
@@ -251,16 +258,10 @@
   padding-top: 1rem;
 }
 
-@media screen and (max-width: 900px) {
-  .second-section .top .heading, .second-section .bottom .heading {
-    font-size: 3rem;
-  }
-}
-
 .second-section .top {
   height: 50%;
   color: var(--text-color);
-  font-size: 4rem;
+  font-size: 0.5rem;
 }
 
 .second-section .top .heading {
@@ -278,7 +279,7 @@
 .second-section .bottom {
   height: 50%;
   color: var(--text-color);
-  font-size: 4rem;
+  font-size: 0.5rem;
 }
 
 .second-section .bottom .heading {
