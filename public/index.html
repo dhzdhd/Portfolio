@@ -8,11 +8,13 @@
   <link rel="shortcut icon" href="assets/icons/dhzdhd.png" />
   <link rel="stylesheet" href="css/styles.css" />
 
+  <!-- Icon scripts -->
   <script src="https://kit.fontawesome.com/7484a4c6c7.js" crossorigin="anonymous"></script>
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- <button title="Theme switcher" class="theme-button"></button> -->
+  <!-- Dark theme slider -->
   <div class="theme-slider-container">
     <label class="theme-slider-label" for="checkbox">
       <input type="checkbox" title="Theme Box" id="checkbox" />
@@ -20,19 +22,14 @@
     </label>
   </div>
 
+  <!-- Social media link bar -->
   <div class="side-bar">
-    <a rel="noopener noreferrer" title="Github" href="https://github.com/dhzdhd" target="_blank">
-      <span class="fab fa-github"></span>
-    </a>
-    <a rel="noopener noreferrer" title="Discord" href="https://discord.com/users/670237058052390933" target="_blank">
-      <span class="fab fa-discord"></span>
-    </a>
-    <a rel="noopener noreferrer" title="Instagram" href="https://www.instagram.com/dhzdhd_/" target="_blank">
-      <span class="fab fa-instagram"></span>
-    </a>
+    <a class="fab fa-github" rel="noopener noreferrer" title="Github" href="https://github.com/dhzdhd" target="_blank"></a>
+    <a class="fab fa-discord" rel="noopener noreferrer" title="Discord" href="https://discord.com/users/670237058052390933" target="_blank"></a>
+    <a class="fab fa-instagram" rel="noopener noreferrer" title="Instagram" href="https://www.instagram.com/dhzdhd_/" target="_blank"></a>
   </div>
 
-  <section class="first-section">
+  <section class="first-section" id="hello">
     <div class="top">
       <img class="user-img" alt="User image" src="assets/icons/dhzdhd.png" />
       <h1>Hello. I am dhzdhd.</h1>
@@ -47,7 +44,30 @@
   </section>
 
   <section class="second-section" id="about-me">
-
+    <div class="top">
+      <h4 class="heading">Languages I know</h4>
+      <div class="lang-icon-container">
+        <span class="iconify" data-icon="logos:python"></span>
+        <span class="iconify" data-icon="logos:dart"></span>
+        <span class="iconify" data-icon="logos:c"></span>
+        <span class="iconify" data-icon="logos:fsharp"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span>
+        <span class="iconify" data-icon="logos:typescript-icon"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-julia"></span>
+        <span class="iconify" data-icon="logos:c-plusplus"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-rust"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-qml"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-html"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-css"></span>
+        <span class="iconify" data-icon="logos:sass"></span>
+      </div>
+    </div>
+    <div class="bottom">
+      <h4 class="heading">Frameworks/Tools I use</h4>
+      <div class="tool-icon-container">
+        <span class="iconify" data-icon="logos:flutter"></span>
+      </div>
+    </div>
   </section>
 
   <section class="third-section" id="projects">
@@ -176,7 +196,7 @@
     </div>
   </section>
 
-  <section class="fourth-section" d="fact">
+  <section class="fourth-section" id="facts">
     <div class="top">
       <h1 class="fact-heading">Today's useless(?) fact</h1>
       <h2 class="today-fact-text"></h2>
