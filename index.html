@@ -8,11 +8,13 @@
   <link rel="shortcut icon" href="assets/icons/dhzdhd.png" />
   <link rel="stylesheet" href="css/styles.css" />
 
+  <!-- Icon scripts -->
   <script src="https://kit.fontawesome.com/7484a4c6c7.js" crossorigin="anonymous"></script>
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <!-- <button title="Theme switcher" class="theme-button"></button> -->
+  <!-- Dark theme slider -->
   <div class="theme-slider-container">
     <label class="theme-slider-label" for="checkbox">
       <input type="checkbox" title="Theme Box" id="checkbox" />
@@ -20,25 +22,20 @@
     </label>
   </div>
 
+  <!-- Social media link bar -->
   <div class="side-bar">
-    <a rel="noopener noreferrer" title="Github" href="https://github.com/dhzdhd" target="_blank">
-      <span class="fab fa-github"></span>
-    </a>
-    <a rel="noopener noreferrer" title="Discord" href="https://github.com/dhzdhd" target="_blank">
-      <span class="fab fa-discord"></span>
-    </a>
-    <a rel="noopener noreferrer" title="Instagram" href="https://www.instagram.com/dhzdhd_/" target="_blank">
-      <span class="fab fa-instagram"></span>
-    </a>
+    <a class="fab fa-github" rel="noopener noreferrer" title="Github" href="https://github.com/dhzdhd" target="_blank"></a>
+    <a class="fab fa-discord" rel="noopener noreferrer" title="Discord" href="https://discord.com/users/670237058052390933" target="_blank"></a>
+    <a class="fab fa-instagram" rel="noopener noreferrer" title="Instagram" href="https://www.instagram.com/dhzdhd_/" target="_blank"></a>
   </div>
 
-  <section class="first-section">
+  <section class="first-section" id="hello">
     <div class="top">
       <img class="user-img" alt="User image" src="assets/icons/dhzdhd.png" />
       <h1>Hello. I am dhzdhd.</h1>
     </div>
     <div class="bottom">
-      <a rel="noopener noreferrer" title="Projects Section" href="#projects">
+      <a rel="noopener noreferrer" title="Projects Section" href="#about-me">
         <button class="down-button" title="Down arrow">
           <span class="fas fa-arrow-down"></span>
         </button>
@@ -46,10 +43,49 @@
     </div>
   </section>
 
-  <section class="second-section" id="projects">
-    <div class="heading">
-      <h1>Projects</h1>
+  <section class="second-section" id="about-me">
+    <div class="top">
+      <h2 class="heading">Languages I know</h2>
+      <div class="icon-container">
+        <span class="iconify" data-icon="logos:python">python</span>
+        <span class="iconify" data-icon="logos:dart"></span>
+        <span class="iconify" data-icon="logos:c"></span>
+        <span class="iconify" data-icon="logos:fsharp"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span>
+        <span class="iconify" data-icon="logos:typescript-icon"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-julia"></span>
+        <span class="iconify" data-icon="logos:c-plusplus"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-rust"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-qml"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-html"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-css"></span>
+        <span class="iconify" data-icon="logos:sass"></span>
+        <span class="iconify" data-icon="carbon:sql"></span>
+        <span class="iconify" data-icon="fa-brands:dyalog"></span>
+      </div>
     </div>
+    <div class="bottom">
+      <h2 class="heading">Frameworks / Tools I use</h2>
+      <div class="icon-container">
+        <span class="iconify" data-icon="logos:flutter"></span>
+        <span class="iconify" data-icon="logos:qt"></span>
+        <span class="iconify" data-icon="logos:svelte-icon"></span>
+        <span class="iconify" data-icon="logos:postgresql"></span>
+        <span class="iconify" data-icon="logos:mysql"></span>
+        <span class="iconify" data-icon="logos:discord-icon"></span>
+        <span class="iconify" data-icon="logos:selenium"></span>
+        <span class="iconify" data-icon="logos:docker-icon"></span>
+        <span class="iconify" data-icon="logos:kubernetes"></span>
+        <span class="iconify" data-icon="vscode-icons:file-type-vscode"></span>
+        <span class="iconify" data-icon="logos:jetbrains"></span>
+        <span class="iconify" data-icon="logos:vim"></span>
+        <span class="iconify" data-icon="logos:git-icon"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="third-section" id="projects">
+    <h2 class="heading">Projects</h2>
     <div class="container">
       <a id="link-1" rel="noopener noreferrer" target="_blank">
         <div class="card" id="card-1">
@@ -174,18 +210,18 @@
     </div>
   </section>
 
-  <section class="third-section" d="fact">
+  <section class="fourth-section" id="facts">
     <div class="top">
-      <h1 class="fact-heading">Today's useless(?) fact</h1>
-      <h2 class="today-fact-text"></h2>
+      <h2 class="fact-heading">Today's useless(?) fact</h2>
+      <h3 class="today-fact-text"></h3>
     </div>
     <div class="bottom">
       <div class="top-half">
-        <h1 class="fact-heading">Get a random fact</h1>
+        <h2 class="fact-heading">Get a random fact</h2>
         <button title="Get fact" class="get-fact fas fa-arrow-right"></button>
       </div>
       <div class="bottom-half">
-        <h2 class="random-fact-text"></h2>
+        <h3 class="random-fact-text"></h3>
       </div>
     </div>
   </section>
