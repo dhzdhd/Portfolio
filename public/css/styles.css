@@ -310,13 +310,14 @@
 
 @media screen and (max-width: 900px) {
   .second-section {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
   .second-section .top, .second-section .bottom {
     padding-left: 1rem;
     padding-right: 1rem;
   }
   .second-section .top .heading, .second-section .bottom .heading {
+    padding-bottom: 1rem;
     font-size: 2.5rem;
     word-wrap: break-word;
   }
@@ -483,7 +484,12 @@
 }
 
 @media screen and (max-width: 900px) {
+  .third-section .heading {
+    height: 10%;
+    font-size: 2.5rem;
+  }
   .third-section .container {
+    height: 90%;
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
@@ -616,16 +622,19 @@
 
 @media screen and (max-height: 700px), (max-width: 900px) {
   .fourth-section .top .fact-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .fourth-section .top .today-fact-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  .fourth-section .bottom .top-half {
+    gap: 0.7rem;
   }
   .fourth-section .bottom .top-half .fact-heading, .fourth-section .bottom .top-half .get-fact {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .fourth-section .bottom .bottom-half .random-fact-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

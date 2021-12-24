@@ -256,13 +256,14 @@ $h5-font: 1rem;
 
 @media screen and (max-width: 900px) {
     .second-section {
-        font-size: $h4-font + 0.3rem;
+        font-size: $h4-font + 0.1rem;
 
         .top, .bottom {
             padding-left: 1rem;
             padding-right: 1rem;
 
             .heading {
+                padding-bottom: 1rem;
                 font-size: $h3-font - 0.5rem;
                 word-wrap: break-word;
             }
@@ -391,7 +392,13 @@ $h5-font: 1rem;
     }
 
     @media screen and (max-width: 900px) {
+        .heading {
+            height: 10%;
+            font-size: $h3-font - 0.5rem;
+        }
+
         .container {
+            height: 90%;
             grid-template-columns: repeat(1, 1fr);
         
             a {
@@ -507,23 +514,25 @@ $h5-font: 1rem;
     @media screen and (max-height: 700px), (max-width: 900px) {
         .top {
             .fact-heading {
-                font-size: $h3-font;
+                font-size: $h3-font - 0.5rem;
             }
 
             .today-fact-text {
-                font-size: $h4-font;
+                font-size: $h4-font - 0.5rem;
             }
         }
 
         .bottom {
             .top-half {
+                gap: 0.7rem;
+
                 .fact-heading, .get-fact {
-                    font-size: $h3-font;
+                    font-size: $h4-font;
                 }
             }
             .bottom-half {
                 .random-fact-text {
-                    font-size: $h4-font;
+                    font-size: $h4-font - 0.5rem;
                 }   
             }
         }
