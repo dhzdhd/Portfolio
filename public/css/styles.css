@@ -308,6 +308,10 @@
       align-self: center;
 }
 
+.second-section .top .icon-container .iconify, .second-section .bottom .icon-container .iconify {
+  aspect-ratio: 1;
+}
+
 @media screen and (max-width: 900px) {
   .second-section {
     font-size: 2.1rem;
@@ -333,6 +337,7 @@
 .third-section {
   height: 100vh;
   background-color: var(--primary-color);
+  padding-left: 1rem;
 }
 
 .third-section .heading {
