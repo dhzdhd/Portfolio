@@ -250,6 +250,10 @@ $h5-font: 1rem;
             row-gap: 2rem;
             column-gap: 3rem;
             align-self: center;
+
+            .iconify {
+                aspect-ratio: 1;
+            }
         }
     }
 }
@@ -280,6 +284,7 @@ $h5-font: 1rem;
 .third-section {
     height: 100vh;
     background-color: var(--primary-color);
+    padding-left: 1rem;
 
     .heading {
         height: 20%;
