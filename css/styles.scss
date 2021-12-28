@@ -237,6 +237,7 @@ $h5-font: 1rem;
         justify-content: center;
         padding-left: 5rem;
         padding-right: 5rem;
+        transition-duration: 0s;
 
         .heading {
             font-size: $h2-font;
@@ -250,10 +251,12 @@ $h5-font: 1rem;
             row-gap: 2rem;
             column-gap: 3rem;
             align-self: center;
+            transition-duration: inherit;
 
             a {
                 text-decoration: none;
                 color: var(--text-color);
+                transition-duration: inherit;
 
                 .iconify {
                     aspect-ratio: 1;
@@ -263,7 +266,7 @@ $h5-font: 1rem;
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-height: 700px), (max-width: 900px) {
     .second-section {
         font-size: $h4-font + 0.1rem;
 
