@@ -288,6 +288,8 @@
           justify-content: center;
   padding-left: 5rem;
   padding-right: 5rem;
+  -webkit-transition-duration: 0s;
+          transition-duration: 0s;
 }
 
 .second-section .top .heading, .second-section .bottom .heading {
@@ -306,18 +308,22 @@
           column-gap: 3rem;
   -ms-grid-row-align: center;
       align-self: center;
+  -webkit-transition-duration: inherit;
+          transition-duration: inherit;
 }
 
 .second-section .top .icon-container a, .second-section .bottom .icon-container a {
   text-decoration: none;
   color: var(--text-color);
+  -webkit-transition-duration: inherit;
+          transition-duration: inherit;
 }
 
 .second-section .top .icon-container a .iconify, .second-section .bottom .icon-container a .iconify {
   aspect-ratio: 1;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-height: 700px), (max-width: 900px) {
   .second-section {
     font-size: 2.1rem;
   }
