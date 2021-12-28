@@ -308,6 +308,8 @@ $h5-font: 1rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-items:center;
+        padding-left: 2rem;
+        padding-right: 2rem;
 
         a {
             color: transparent;
@@ -410,6 +412,8 @@ $h5-font: 1rem;
         .container {
             height: 90%;
             grid-template-columns: repeat(1, 1fr);
+            padding-left: 1rem;
+            padding-right: 1rem;
         
             a {
                 height: 100%;
