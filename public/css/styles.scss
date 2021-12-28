@@ -251,8 +251,13 @@ $h5-font: 1rem;
             column-gap: 3rem;
             align-self: center;
 
-            .iconify {
-                aspect-ratio: 1;
+            a {
+                text-decoration: none;
+                color: var(--text-color);
+
+                .iconify {
+                    aspect-ratio: 1;
+                }
             }
         }
     }

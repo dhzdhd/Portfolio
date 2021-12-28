@@ -308,7 +308,12 @@
       align-self: center;
 }
 
-.second-section .top .icon-container .iconify, .second-section .bottom .icon-container .iconify {
+.second-section .top .icon-container a, .second-section .bottom .icon-container a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.second-section .top .icon-container a .iconify, .second-section .bottom .icon-container a .iconify {
   aspect-ratio: 1;
 }
 
