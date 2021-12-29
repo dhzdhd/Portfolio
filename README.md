@@ -1,6 +1,6 @@
-# Fable Minimal App
+# My Portfolio
 
-This is a small Fable app project so you can easily get started and add your own code progressively. For more comprehensive templates [check this page](https://fable.io/docs/2-steps/your-first-fable-project.html).
+This is a personal portfolio website I created using HTML, Sass and Fable - F#.
 
 ## Requirements
 
@@ -15,8 +15,6 @@ This is a small Fable app project so you can easily get started and add your own
 * After the first compilation is finished, in your browser open: http://localhost:8080/
 
 Any modification you do to the F# code will be reflected in the web page after saving.
-
-> Note: check the "scripts" section in `package.json` to see the commands triggered by the steps above.
 
 ## Bundling for release
 
