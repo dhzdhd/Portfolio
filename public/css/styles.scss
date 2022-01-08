@@ -32,7 +32,6 @@ $h5-font: 1rem;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    transition-duration: 0.5s;
     @include font();
 
     &::selection {
@@ -66,6 +65,7 @@ $h5-font: 1rem;
         top: 0;
         bottom: 0;
         cursor: pointer;
+        transition-duration: 0.5s;
 
         &, &::before {
             border-radius: 1rem;
@@ -178,6 +178,7 @@ $h5-font: 1rem;
             margin-top: 2rem;
             color: var(--secondary-text-color);
             font-size: $h1-font;
+            transition-duration: 0.5s;
         
             &:hover, &:focus {
                 transform: rotateZ(2deg);
@@ -198,6 +199,7 @@ $h5-font: 1rem;
             background: $gradient;
             border: none;
             border-radius: 1.5rem;
+            transition-duration: 0.5s;
             
             &:hover {
                 transform: scale(1.1);
@@ -399,9 +401,7 @@ $h5-font: 1rem;
                 border: none;
                 transform: scale(1.04);
     
-                h2 {
-                    color: var(--secondary-text-color);
-                }
+                color: var(--secondary-text-color);
             }
         }
     }
