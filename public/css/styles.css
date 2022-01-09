@@ -31,6 +31,12 @@
   background-color: #34e7d5;
 }
 
+body {
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+  color: #34e7d5;
+}
+
 .theme-slider-container {
   position: fixed;
   display: -webkit-box;
@@ -177,6 +183,7 @@
 
 .first-section {
   height: 100vh;
+  scroll-snap-align: start;
 }
 
 .first-section .top {
@@ -275,6 +282,7 @@
   height: 100vh;
   background-color: var(--primary-color);
   font-size: 3rem;
+  scroll-snap-align: center;
 }
 
 .second-section .top, .second-section .bottom {

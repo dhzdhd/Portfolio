@@ -110,5 +110,3 @@ themeSwitch.addEventListener ("change", Utils.switchTheme)
 let myButton = document.querySelector(".get-fact") :?> Browser.Types.HTMLButtonElement
 myButton.onclick <- fun _ ->
     Facts.getFact "https://uselessfacts.jsph.pl/random.json?language=en" "random"
-
-Browser.WebStorage.sessionStorage.setItem("theme", "light")
