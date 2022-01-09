@@ -1,6 +1,7 @@
 module App
 
 open Browser.Dom
+open Browser.WebStorage
 open Fetch
 open Thoth.Json
 open System.Text.RegularExpressions
@@ -15,16 +16,27 @@ type GithubJsonRecord = {
     forks: int
 }
 
-let mutable flag = false
+let mutable light = true
 
 module private Utils =
-    let switchTheme (event: Browser.Types.Event) =
-        if not flag then
+    let switchTheme (_: Browser.Types.Event) =
+        if not light then
             document.documentElement.setAttribute("theme", "dark")
-            flag <- true
+            localStorage.setItem ("theme", "dark")
         else
             document.documentElement.setAttribute("theme", "light")
-            flag <- false
+            localStorage.setItem ("theme", "light")
+        light <- not light
+
+    let setTheme (theme: string) = 
+        match theme with
+        | "light" -> 
+            light <- true
+            document.documentElement.setAttribute("theme", "light")
+        | "dark" -> 
+            light <- false
+            document.documentElement.setAttribute("theme", "dark")
+        | _ -> ()
 
 module private Github =
     let updateCards (ghRecord: GithubJsonRecord) (index: int) = 
@@ -88,6 +100,7 @@ module private Facts =
         )
         |> ignore
 
+Utils.setTheme (localStorage.getItem "theme")
 Facts.getFact "https://uselessfacts.jsph.pl/today.json?language=en" "today"
 Github.getRepoInfo
 
@@ -98,4 +111,4 @@ let myButton = document.querySelector(".get-fact") :?> Browser.Types.HTMLButtonE
 myButton.onclick <- fun _ ->
     Facts.getFact "https://uselessfacts.jsph.pl/random.json?language=en" "random"
 
-
+Browser.WebStorage.sessionStorage.setItem("theme", "light")
