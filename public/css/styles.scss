@@ -465,18 +465,18 @@ $h5-font: 1rem;
         justify-content: center;
 
         .fact-heading {
-            color: var(--secondary-text-color);
-            font-size: $h2-font;
-            text-align: center;
             margin-bottom: 1rem;
+            color: var(--secondary-text-color);
+            font-size: clamp(20%, 4vw, $h2-font);
+            text-align: center;
         }
 
         .today-fact-text {
             margin-left: 10%;
             margin-right: 10%;
+            color: var(--secondary-text-color); 
+            font-size: clamp(20%, 3vw, $h3-font);
             text-align: center;
-            color: var(--secondary-text-color);
-            font-size: $h3-font;
         }
     }
 
@@ -495,7 +495,7 @@ $h5-font: 1rem;
 
             .fact-heading {
                 color: var(--text-color);
-                font-size: $h2-font;
+                font-size: clamp(20%, 4vw, $h2-font);
                 text-align: center;
             }
 
@@ -505,7 +505,7 @@ $h5-font: 1rem;
                 background: $gradient;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                font-size: $h2-font;
+                font-size: clamp(20%, 4vw, $h2-font);
                 font-weight: bold;
                 border: none;
                 cursor: pointer;
@@ -523,7 +523,7 @@ $h5-font: 1rem;
                 margin-right: 10%;
                 text-align: center;
                 color: var(--text-color);
-                font-size: $h3-font;
+                font-size: clamp(20%, 3vw, $h3-font);
             }
         }
     }
