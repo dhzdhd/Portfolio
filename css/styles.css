@@ -17,8 +17,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   scroll-behavior: smooth;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 }
@@ -31,6 +29,12 @@
 *::selection {
   color: white;
   background-color: #34e7d5;
+}
+
+body {
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
+  color: #34e7d5;
 }
 
 .theme-slider-container {
@@ -64,6 +68,8 @@
   top: 0;
   bottom: 0;
   cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .theme-slider-container .slider, .theme-slider-container .slider::before {
@@ -177,6 +183,7 @@
 
 .first-section {
   height: 100vh;
+  scroll-snap-align: start;
 }
 
 .first-section .top {
@@ -218,6 +225,8 @@
   margin-top: 2rem;
   color: var(--secondary-text-color);
   font-size: 5rem;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .first-section .top h1:hover, .first-section .top h1:focus {
@@ -246,6 +255,8 @@
   background: linear-gradient(to right, #63bdfc, #8491ff);
   border: none;
   border-radius: 1.5rem;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .first-section .bottom .down-button:hover {
@@ -271,6 +282,7 @@
   height: 100vh;
   background-color: var(--primary-color);
   font-size: 3rem;
+  scroll-snap-align: center;
 }
 
 .second-section .top, .second-section .bottom {
@@ -495,9 +507,6 @@
   border: none;
   -webkit-transform: scale(1.04);
           transform: scale(1.04);
-}
-
-.third-section .container .card:hover h2 {
   color: var(--secondary-text-color);
 }
 
@@ -562,18 +571,18 @@
 }
 
 .fourth-section .top .fact-heading {
-  color: var(--secondary-text-color);
-  font-size: 4rem;
-  text-align: center;
   margin-bottom: 1rem;
+  color: var(--secondary-text-color);
+  font-size: clamp(20%, 4vw, 4rem);
+  text-align: center;
 }
 
 .fourth-section .top .today-fact-text {
   margin-left: 10%;
   margin-right: 10%;
-  text-align: center;
   color: var(--secondary-text-color);
-  font-size: 3rem;
+  font-size: clamp(20%, 3vw, 3rem);
+  text-align: center;
 }
 
 .fourth-section .bottom {
@@ -604,7 +613,7 @@
 
 .fourth-section .bottom .top-half .fact-heading {
   color: var(--text-color);
-  font-size: 4rem;
+  font-size: clamp(20%, 4vw, 4rem);
   text-align: center;
 }
 
@@ -619,7 +628,7 @@
   background: linear-gradient(to right, #63bdfc, #8491ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 4rem;
+  font-size: clamp(20%, 4vw, 4rem);
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -637,7 +646,7 @@
   margin-right: 10%;
   text-align: center;
   color: var(--text-color);
-  font-size: 3rem;
+  font-size: clamp(20%, 3vw, 3rem);
 }
 
 @media screen and (max-height: 700px), (max-width: 900px) {
