@@ -31,10 +31,23 @@
   background-color: #34e7d5;
 }
 
-body {
-  -ms-scroll-snap-type: y proximity;
-      scroll-snap-type: y proximity;
-  color: #34e7d5;
+body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #63bdfc;
+  background: whitesmoke;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+body::-webkit-scrollbar-track {
+  background: #8491ff;
+  background: black;
 }
 
 .theme-slider-container {
@@ -183,7 +196,6 @@ body {
 
 .first-section {
   height: 100vh;
-  scroll-snap-align: start;
 }
 
 .first-section .top {
@@ -282,7 +294,6 @@ body {
   height: 100vh;
   background-color: var(--primary-color);
   font-size: 3rem;
-  scroll-snap-align: center;
 }
 
 .second-section .top, .second-section .bottom {

@@ -40,6 +40,28 @@ $h5-font: 1rem;
     }
 }
 
+body {
+    &::-webkit-scrollbar {
+        width:  0.5rem;
+        height: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgb(99, 189, 252);
+        background: whitesmoke;
+
+        &:hover {
+            background: white;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgb(132, 145, 255);
+        background: black;
+        // background: rgb(99, 189, 252);
+    }
+}
+
 .theme-slider-container {
     position: fixed;
     display: flex;

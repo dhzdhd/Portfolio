@@ -6,15 +6,14 @@ open Fetch
 open Thoth.Json
 open System.Text.RegularExpressions
 
-type GithubJsonRecord = {
-    owner: string
-    repo: string
-    link: string
-    description: string
-    language: string
-    stars: int
-    forks: int
-}
+type GithubJsonRecord = 
+    { owner: string
+      repo: string
+      link: string
+      description: string
+      language: string
+      stars: int
+      forks: int }
 
 let mutable light = true
 
