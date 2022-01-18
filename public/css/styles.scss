@@ -48,7 +48,6 @@ body {
 
     &::-webkit-scrollbar-thumb {
         background: rgb(99, 189, 252);
-        background: whitesmoke;
 
         &:hover {
             background: white;
@@ -56,9 +55,7 @@ body {
     }
 
     &::-webkit-scrollbar-track {
-        background: rgb(132, 145, 255);
         background: black;
-        // background: rgb(99, 189, 252);
     }
 }
 

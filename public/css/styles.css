@@ -38,7 +38,6 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   background: #63bdfc;
-  background: whitesmoke;
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -46,7 +45,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 body::-webkit-scrollbar-track {
-  background: #8491ff;
   background: black;
 }
 
