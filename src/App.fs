@@ -19,12 +19,13 @@ let mutable light = true
 
 module private Utils =
     let switchTheme (_: Browser.Types.Event) =
-        if not light then
-            document.documentElement.setAttribute("theme", "dark")
-            localStorage.setItem ("theme", "dark")
-        else
+        match light with
+        | true -> 
             document.documentElement.setAttribute("theme", "light")
             localStorage.setItem ("theme", "light")
+        | false ->
+            document.documentElement.setAttribute("theme", "dark")
+            localStorage.setItem ("theme", "dark")
         light <- not light
 
     let setTheme (theme: string) = 
@@ -61,6 +62,7 @@ module private Github =
         
         ()
 
+    // ! Broken
     let getRepoInfo =
         fetch "https://gh-pinned-repos-5l2i19um3.vercel.app/?username=dhzdhd" []
         |> Promise.bind (fun res -> res.text())
