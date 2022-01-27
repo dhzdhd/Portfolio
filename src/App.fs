@@ -5,8 +5,6 @@ open Browser.WebStorage
 open Fetch
 open Thoth.Json
 open System.Text.RegularExpressions
-open FSharp.Data.GraphQL
-open FSharp.Data.GraphQL.Types
 
 type GithubRecord = 
     { owner: string
@@ -64,11 +62,9 @@ module private Github =
         
         ()
 
-    // ! Broken
     let getRepoInfo =
-        
-        ()
-        fetch "https://gh-pinned-repos-5l2i19um3.vercel.app/?username=dhzdhd" []
+        // https://github.com/egoist/gh-pinned-repos
+        fetch "https://gh-pinned-repos.egoist.sh/?username=dhzdhd" []
         |> Promise.bind (fun res -> res.text())
         |> Promise.map(fun txt -> Regex.Matches (txt, "{.*?}"))
         |> Promise.map (fun lst ->
