@@ -5,8 +5,10 @@ open Browser.WebStorage
 open Fetch
 open Thoth.Json
 open System.Text.RegularExpressions
+open FSharp.Data.GraphQL
+open FSharp.Data.GraphQL.Types
 
-type GithubJsonRecord = 
+type GithubRecord = 
     { owner: string
       repo: string
       link: string
@@ -39,7 +41,7 @@ module private Utils =
         | _ -> ()
 
 module private Github =
-    let updateCards (ghRecord: GithubJsonRecord) (index: int) = 
+    let updateCards (ghRecord: GithubRecord) (index: int) = 
         let card = document.querySelector $"#card-%i{index + 1}" :?> Browser.Types.HTMLDivElement
 
         let link = document.querySelector $"#link-%i{index + 1}" :?> Browser.Types.HTMLLinkElement
@@ -64,12 +66,14 @@ module private Github =
 
     // ! Broken
     let getRepoInfo =
+        
+        ()
         fetch "https://gh-pinned-repos-5l2i19um3.vercel.app/?username=dhzdhd" []
         |> Promise.bind (fun res -> res.text())
         |> Promise.map(fun txt -> Regex.Matches (txt, "{.*?}"))
         |> Promise.map (fun lst ->
             for i in 0..lst.Count do
-                let decoded = Decode.Auto.fromString<GithubJsonRecord> ((lst.Item i).ToString (), caseStrategy = CamelCase)
+                let decoded = Decode.Auto.fromString<GithubRecord> ((lst.Item i).ToString (), caseStrategy = CamelCase)
                 match decoded with
                 | Ok resp -> updateCards resp i
                 | Error decodingError -> printfn $"{decodingError}"
