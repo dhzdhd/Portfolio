@@ -8,12 +8,9 @@
   <ItemGroup>
     <PackageReference Include="Fable.Browser.Dom" Version="2.2.0" />
     <PackageReference Include="Fable.Core" Version="3.2.3" />
-    <PackageReference Include="Fable.Node" Version="1.2.0" />
     <PackageReference Include="Fable.SimpleHttp" Version="3.0.0" />
     <PackageReference Include="Fable.SimpleJson" Version="3.22.0" />
-    <PackageReference Include="FSharp.Data.GraphQL.Client" Version="1.0.7" />
     <PackageReference Include="FsHttp" Version="6.0.1" />
-    <PackageReference Include="Octokit" Version="0.50.0" />
     <PackageReference Include="Thoth.Fetch" Version="3.0.1" />
   </ItemGroup>
 </Project>
