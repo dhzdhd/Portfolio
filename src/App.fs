@@ -6,7 +6,7 @@ open Fetch
 open Thoth.Json
 open System.Text.RegularExpressions
 
-type GithubRecord = 
+type GithubRecord =
     { owner: string
       repo: string
       link: string
@@ -20,7 +20,7 @@ let mutable light = true
 module private Utils =
     let switchTheme (_: Browser.Types.Event) =
         match light with
-        | true -> 
+        | true ->
             document.documentElement.setAttribute("theme", "light")
             localStorage.setItem ("theme", "light")
         | false ->
@@ -28,18 +28,18 @@ module private Utils =
             localStorage.setItem ("theme", "dark")
         light <- not light
 
-    let setTheme (theme: string) = 
+    let setTheme (theme: string) =
         match theme with
-        | "light" -> 
+        | "light" ->
             light <- true
             document.documentElement.setAttribute("theme", "light")
-        | "dark" -> 
+        | "dark" ->
             light <- false
             document.documentElement.setAttribute("theme", "dark")
         | _ -> ()
 
 module private Github =
-    let updateCards (ghRecord: GithubRecord) (index: int) = 
+    let updateCards (ghRecord: GithubRecord) (index: int) =
         let card = document.querySelector $"#card-%i{index + 1}" :?> Browser.Types.HTMLDivElement
 
         let link = document.querySelector $"#link-%i{index + 1}" :?> Browser.Types.HTMLLinkElement
@@ -50,16 +50,16 @@ module private Github =
 
         let desc = card.querySelector ".card-desc"
         desc.textContent <- if ghRecord.description.Equals "" then "No description" else ghRecord.description
-        
+
         let language = card.querySelector ".card-lang"
         language.textContent <- ghRecord.language
-        
+
         let stars = card.querySelector ".card-stars"
         stars.textContent <- ghRecord.stars.ToString ()
 
         let forks = card.querySelector ".card-forks"
         forks.textContent <- ghRecord.forks.ToString ()
-        
+
         ()
 
     let getRepoInfo =
@@ -90,10 +90,10 @@ module private Facts =
     let getFact (url:string) (factType:string) =
         fetch url []
         |> Promise.bind (fun res -> res.text())
-        |> Promise.map (fun txt -> 
+        |> Promise.map (fun txt ->
             let decoded = Decode.Auto.fromString<{|Text: string|}> (txt, caseStrategy = CamelCase)
             match decoded, factType with
-            | Ok resp, "today" -> updateTodayText resp.Text
+            | Ok resp, "today" when resp.Text = "" -> updateTodayText resp.Text
             | Ok resp, "random" -> updateRandomText resp.Text
             | Error decodingError, "today" -> updateTodayText decodingError
             | Error decodingError, "random" -> updateRandomText decodingError
