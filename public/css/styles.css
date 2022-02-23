@@ -433,14 +433,14 @@ body::-webkit-scrollbar-track {
       grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   justify-items: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .third-section .container a {
   color: transparent;
   height: 100%;
-  width: 80%;
+  width: 90%;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
@@ -496,6 +496,7 @@ body::-webkit-scrollbar-track {
 .third-section .container .card .card-title-container .card-title {
   font-size: 1.7rem;
   font-weight: bold;
+  text-overflow: ellipsis;
 }
 
 .third-section .container .card .card-desc {
@@ -557,12 +558,25 @@ body::-webkit-scrollbar-track {
   color: var(--secondary-text-color);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
+  .third-section .container .card .card-title-container .logo {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .third-section .container .card .card-title-container .card-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
   .third-section .heading {
+    min-height: 10vh;
     height: 10%;
     font-size: 2.5rem;
   }
   .third-section .container {
+    min-height: 90vh;
     height: 90%;
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);

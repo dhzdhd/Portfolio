@@ -404,13 +404,13 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 3rem;
         justify-items: center;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
 
         a {
             color: transparent;
             height: 100%;
-            width: 80%;
+            width: 90%;
             transition-duration: 0.3s;
         }
 
@@ -444,6 +444,7 @@ body {
                 .card-title {
                     font-size: $h5-font + 0.7rem;
                     font-weight: bold;
+                    text-overflow: ellipsis;
                 }
             }
 
@@ -498,13 +499,31 @@ body {
         }
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: $md) {
+        .container {
+            .card {
+                .card-title-container {
+                    .logo {
+                        @include fsize('2xl');
+                    }
+
+                    .card-title {
+                        @include fsize('2xl');
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $sm) {
         .heading {
+            min-height: 10vh;
             height: 10%;
             font-size: $h3-font - 0.5rem;
         }
 
         .container {
+            min-height: 90vh;
             height: 90%;
             grid-template-columns: repeat(1, 1fr);
             gap: 1rem;
