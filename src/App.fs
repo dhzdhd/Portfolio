@@ -87,7 +87,7 @@ module private Facts =
         randomFactText.innerText <- text
         ()
 
-    let getFact (url:string) (factType:string) =
+    let getFact (url: string) (factType: string) =
         fetch url []
         |> Promise.bind (fun res -> res.text())
         |> Promise.map (fun txt ->

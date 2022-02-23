@@ -118,15 +118,9 @@ body::-webkit-scrollbar-track {
           transform: translateX(2rem);
 }
 
-@media screen and (max-width: 900px) {
-  .theme-slider-container {
-    margin-right: 1rem;
-  }
-}
-
 .side-bar {
-  width: 4rem;
   height: 100vh;
+  width: 4rem;
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,6 +135,7 @@ body::-webkit-scrollbar-track {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 1.4rem;
 }
 
 .side-bar .fab {
@@ -155,10 +150,6 @@ body::-webkit-scrollbar-track {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
-  margin-bottom: 0.7rem;
-  margin-top: 0.7rem;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
   color: var(--text-color);
@@ -166,7 +157,7 @@ body::-webkit-scrollbar-track {
   text-decoration: none;
   height: 2.6rem;
   width: 2.6rem;
-  border-radius: 1.3rem;
+  border-radius: 50%;
 }
 
 .side-bar .fab:hover {
@@ -174,14 +165,11 @@ body::-webkit-scrollbar-track {
           transform: scale(1.1);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 640px) {
   .side-bar {
     width: 100%;
     height: 4rem;
     position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -190,13 +178,13 @@ body::-webkit-scrollbar-track {
         -ms-flex-pack: start;
             justify-content: start;
     gap: 1rem;
-    left: 1rem;
+    padding-left: 1rem;
     z-index: 1;
   }
 }
 
 .first-section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .first-section .top {
@@ -215,22 +203,17 @@ body::-webkit-scrollbar-track {
           align-items: center;
   background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
   background: linear-gradient(to right, #63bdfc, #8491ff);
-  height: 80%;
+  min-height: 80vh;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .first-section .top .user-img {
   width: 16rem;
   border: solid;
   border-color: aquamarine;
-  border-radius: 8rem;
+  border-radius: 50%;
   margin-bottom: 2rem;
-}
-
-@media screen and (max-height: 700px) {
-  .first-section .top .user-img {
-    width: 12rem;
-    margin-bottom: 0;
-  }
 }
 
 .first-section .top h1 {
@@ -257,7 +240,16 @@ body::-webkit-scrollbar-track {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .first-section .top .user-img {
+    width: 14rem;
+  }
+}
+
 @media screen and (max-width: 640px) {
+  .first-section .top .user-img {
+    width: 12rem;
+  }
   .first-section .top h1 {
     margin-left: 10%;
     margin-right: 10%;
@@ -267,7 +259,7 @@ body::-webkit-scrollbar-track {
 }
 
 .first-section .bottom {
-  height: 20%;
+  min-height: 20vh;
   background-color: var(--primary-color);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,11 +270,13 @@ body::-webkit-scrollbar-track {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .first-section .bottom .down-button {
-  width: 5rem;
-  height: 5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   background: -webkit-gradient(linear, left top, right top, from(#63bdfc), to(#8491ff));
   background: linear-gradient(to right, #63bdfc, #8491ff);
   border: none;
@@ -291,7 +285,7 @@ body::-webkit-scrollbar-track {
           transition-duration: 0.5s;
 }
 
-.first-section .bottom .down-button:hover {
+.first-section .bottom .down-button:hover, .first-section .bottom .down-button:active {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   cursor: pointer;
@@ -359,7 +353,7 @@ body::-webkit-scrollbar-track {
           transition-duration: inherit;
 }
 
-@media screen and (max-height: 700px), (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .second-section {
     font-size: 2.1rem;
   }
@@ -434,7 +428,6 @@ body::-webkit-scrollbar-track {
   color: transparent;
   height: 100%;
   width: 80%;
-  padding: 1rem;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
 }
@@ -691,9 +684,9 @@ body::-webkit-scrollbar-track {
   font-size: clamp(20%, 3vw, 3rem);
 }
 
-@media screen and (max-height: 700px), (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .fourth-section .top .fact-heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .fourth-section .top .today-fact-text {
     font-size: 1.5rem;
