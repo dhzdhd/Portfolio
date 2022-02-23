@@ -313,16 +313,20 @@ body {
 .second-section {
     background-color: var(--primary-color);
     @include fsize("5xl");
+    min-height: 100vh;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 
     .top,
     .bottom {
-        // height: 50%;
         color: var(--text-color);
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 5rem;
-        padding-right: 5rem;
+        // padding: 5rem;
         transition-duration: 0s;
 
         .heading {
@@ -347,11 +351,10 @@ body {
             }
         }
     }
-}
 
-@media screen and (max-width: $md) {
-    .second-section {
+    @media screen and (max-width: $md) {
         font-size: $h4-font + 0.1rem;
+        gap: 2rem;
 
         .top,
         .bottom {
@@ -376,13 +379,15 @@ body {
 .third-section {
     min-height: 100vh;
     background-color: var(--primary-color);
-    padding-left: 1rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     gap: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     .heading {
+        min-height: 20vh;
         background: $gradient;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -394,10 +399,10 @@ body {
     }
 
     .container {
-        height: 100%;
+        min-height: 80vh;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        // gap: 5rem;
+        gap: 3rem;
         justify-items: center;
         padding-left: 2rem;
         padding-right: 2rem;
@@ -502,6 +507,7 @@ body {
         .container {
             height: 90%;
             grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
             padding-left: 1rem;
             padding-right: 1rem;
 
